@@ -108,9 +108,7 @@ Contributions are welcome! Feel free to:
 - Blog: [www.yubo.ltd](http://www.yubo.ltd/)
 - GitHub: [Li-yubo](https://github.com/Li-yubo)
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
