@@ -339,11 +339,13 @@ class getValue:
                     self.GETNUM -= 1
         
         else:
-            
-            print(f"{keyArr[0][3]} 操作符无法匹配到对应的操作值，已终止操作...")
-            print(f"当前匹配类型: {type(data)}, 操作符 {keyArr[0][3]} 并不存在该操作中...")
-            self.SETADD = False
-            return
+            if keyArr[0][2] == 'recursive_find' or self.arr[num-2][2] == 'wildcard_access':
+                pass
+            else:
+                print(f"{keyArr[0][3]} 操作符无法匹配到对应的操作值，已终止操作...")
+                print(f"当前匹配类型: {type(data)}, 操作符 {keyArr[0][3]} 并不存在该操作中...")
+                self.SETADD = False
+                return
 
 
     def valueGet(self, data):
