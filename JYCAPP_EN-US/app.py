@@ -7,7 +7,18 @@ from FileHandler import FileHandler
 from JsonHandler import JsonHandler
 from YamlHandler import YamlHandler
 from ConfigHandler import ConfigHandler
+import os
+from shutil import copyfile
 
+def post_install():
+    home_dir = os.path.expanduser("~")
+    target_dir = os.path.join(home_dir, ".jyc")
+
+    if not os.path.exists(target_dir):
+        os.makedirs(target_dir)
+        source_file = os.path.join(os.path.dirname(__file__), 'styles_config.ini')
+        target_file = os.path.join(target_dir, 'styles_config.ini')
+        copyfile(source_file, target_file)
 def print_examples():
     print('''Usage Examples:
   # Retrieve Data
@@ -76,6 +87,7 @@ def get_file_handler(file_path: str) -> FileHandler:
     raise ValueError(f"Unsupported file type: {file_type}")
 
 def main():
+    post_install()
     parser = argparse.ArgumentParser(
         description='''File Operation Tool - JYC - Supports operations on JSON, YAML, and INI configuration files.
 Supports complex query syntax including array indexing, condition filtering, recursive search, sorting, and aggregation.''',
