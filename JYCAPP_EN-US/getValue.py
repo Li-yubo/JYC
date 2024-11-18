@@ -327,11 +327,13 @@ class getValue:
                     self.GETNUM -= 1
         
         else:
-            
-            print(f"{keyArr[0][3]} The operator cannot be matched to the corresponding operation value, and the operation has been terminated....")
-            print(f"Current match type: {type(data)}, Operators {keyArr[0][3]} Does not exist in this operation...")
-            self.SETADD = False
-            return
+            if keyArr[0][2] == 'recursive_find' or self.arr[num-2][2] == 'wildcard_access':
+                pass
+            else:            
+                print(f"{keyArr[0][3]} The operator cannot be matched to the corresponding operation value, and the operation has been terminated....")
+                print(f"Current match type: {type(data)}, Operators {keyArr[0][3]} Does not exist in this operation...")
+                self.SETADD = False
+                return
 
 
     def valueGet(self, data):
