@@ -7,11 +7,11 @@ JYC is an advanced file content operation tool designed for developers to effici
 
 ## Features
 
-- í ½í³ Support for multiple file formats (JSON, YAML, Config files)
-- í ½í´ Powerful query functionality with complex expression support
-- âï¸ Support for data addition, modification, and deletion
-- í ¼í¾¨ Formatted output for better readability
-- í ½í» ï¸ Advanced path expression support, including index access, conditional filtering, recursive search, etc.
+- 📂 Support for multiple file formats (JSON, YAML, Config files)
+- 🔍 Powerful query functionality with complex expression support
+- ✏️ Support for data addition, modification, and deletion
+- 🎨 Formatted output for better readability
+- 🛠️ Advanced path expression support, including index access, conditional filtering, recursive search, etc.
 
 ## Tech Stack
 
@@ -116,7 +116,7 @@ Thanks to all contributors who have helped make this project better!
 
 ---
 
-If you find this project helpful, please give it a star â­ï¸
+If you find this project helpful, please give it a star ⭐️
 
 [View more project details](https://github.com/Li-yubo/JYC)
 
@@ -129,4 +129,3 @@ If you find this project helpful, please give it a star â­ï¸
 - API integration capabilities
 
 For more information and updates, visit the [project repository](https://github.com/Li-yubo/JYC).
-
