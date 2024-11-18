@@ -63,9 +63,8 @@ class FileHandler:
         """格式化输出带颜色的JSON"""
         json_str = json.dumps(data, indent=4, ensure_ascii=False)
         # 获取当前文件的目录
-        current_dir = os.path.dirname(os.path.abspath(__file__))
+        current_dir = os.path.expanduser("~")
         style_config = StyleConfig(current_dir)
-    
         # 获取当前活动的样式
         current_style = style_config.get_active_style()        
         return highlight(json_str, JsonLexer(), Terminal256Formatter(style=current_style))        
@@ -107,7 +106,7 @@ class FileHandler:
     
 class StyleConfig:
     def __init__(self, current_dir):
-        self.config_file = f'{current_dir}/styles_config.ini'
+        self.config_file = f'{current_dir}/.jyc/styles_config.ini'
         self.default_style = 'monokai'
     
     def get_active_style(self):

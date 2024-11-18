@@ -8,6 +8,22 @@ from JsonHandler import JsonHandler
 from YamlHandler import YamlHandler
 from ConfigHandler import ConfigHandler
 
+import os
+from shutil import copyfile
+
+def post_install():
+    home_dir = os.path.expanduser("~")
+    target_dir = os.path.join(home_dir, ".jyc")
+
+    # 创建目录
+    if not os.path.exists(target_dir):
+        os.makedirs(target_dir)
+
+        # 复制文件
+        source_file = os.path.join(os.path.dirname(__file__), 'styles_config.ini')
+        target_file = os.path.join(target_dir, 'styles_config.ini')
+        copyfile(source_file, target_file)
+
 
 def print_examples():
     print('''使用示例:
@@ -76,6 +92,7 @@ def get_file_handler(file_path: str) -> FileHandler:
     raise ValueError(f"未知文件类型: {file_type}")
 
 def main():
+    post_install()
     parser = argparse.ArgumentParser(
         description='''文件操作工具 - JYC - 支持对 JSON、YAML 和 INI 配置文件的操作。
 支持复杂的查询语法，包括数组索引、条件过滤、递归搜索、排序和聚合。''',
