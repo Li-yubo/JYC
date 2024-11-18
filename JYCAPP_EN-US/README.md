@@ -4,6 +4,10 @@
 [![Blog](https://img.shields.io/badge/blog-www.yubo.ltd-orange.svg)](http://www.yubo.ltd/)
 
 JYC is an advanced file content operation tool designed for developers to efficiently perform file data querying, modification, addition, and deletion operations. The tool supports multiple file formats, including JSON, YAML, and configuration files, providing a powerful command-line interface for handling complex data operation requirements.
+## Notes
+
+- ⚠️ There must be no comments in all configuration files. If there are any comments, they will be deleted. Please copy the original file with comments if necessary
+- ⚠️ There must be no comments in json files!!! The format of json files with comments will change
 
 ## Features
 
